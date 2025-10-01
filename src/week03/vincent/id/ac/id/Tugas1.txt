@@ -1,0 +1,133 @@
+1. 	Array Multidimensi adalah  array yang memiliki lebih dari satu index atau dimensi. Jika array 1 dimensi hanya berupa sebuah list, maka array multidimensi bisa dianggap seperti sebuah tabel 2 dimensi atau bahkan kubus 3 dimensi.
+	
+	Contoh Array Multidimensi adalah tabel atau matrix dengan baris dan kolom.
+	
+	Contoh dalam Java:
+	
+	public class ContohMultiArray {
+    	public static void main(String[] args) {
+        	// Array 2 dimensi (3 baris, 3 kolom)
+        	int[][] matrix = {
+            	{1, 2, 3},
+            	{4, 5, 6},
+            	{7, 8, 9}
+        	};
+
+        	// Memilih elemen pada baris dan kolom
+        	System.out.println("Elemen [1][2] = " + matrix[1][2]);
+
+        	// Menampilkan semua elemen array
+        	System.out.println("Isi matrix:");
+        	for (int i = 0; i < matrix.length; i++) {
+            	for (int j = 0; j < matrix[i].length; j++) {
+                	System.out.print(matrix[i][j] + " ");
+            	}
+            	System.out.println();
+        	}
+    	}
+	}
+
+	output yang akan dihasilkan :
+
+	Elemen [1][2] = 6
+	Isi matrix:
+	1 2 3 
+	4 5 6 
+	7 8 9
+	
+		
+2. 	-length()
+	Mengembalikan panjang (jumlah karakter) dari string
+	String s = "Java";
+	System.out.println(s.length());
+	// outputnya adalah 4
+	
+	-charAt(int index)
+	Mengambil karakter pada posisi tertentu (indeks mulai dari 0)
+	String s = "Java";
+	System.out.println(s.charAt(2));
+	// outputnya adalah v
+	
+	-substring(int beginIndex)
+	Mengambil substring mulai dari indeks tertentu sampai akhir
+	String s = "Programming";
+	System.out.println(s.substring(3));
+	// outputnya adalah gramming
+
+	-substring(int beginIndex, int endIndex)
+	Mengambil substring dari beginIndex sampai sebelum endIndex
+	String s = "Programming";
+	System.out.println(s.substring(0, 6));
+	// outputnya adalah Progra
+
+	-toLowerCase()
+	Mengubah semua huruf menjadi huruf kecil
+	String s = "HELLO";
+	System.out.println(s.toLowerCase());
+	// outputnya adalah hello
+	
+	-toUpperCase()
+	Mengubah semua huruf menjadi huruf besar
+	String s = "hello";
+	System.out.println(s.toUpperCase());
+	// outputnya adalah HELLO
+	
+	-trim()
+	Menghapus spasi di awal dan akhir string
+	String s = "   Java   ";
+	System.out.println(s.trim());
+	// outputnya adalah "Java"
+
+	-equals(String another)
+	Membandingkan isi string dengan string lain (case-sensitive)
+	String a = "Java";
+	String b = "java";
+	System.out.println(a.equals(b));
+	// outputnya adalah false
+
+	-equalsIgnoreCase(String another)
+	Membandingkan string tanpa memperhatikan huruf besar/kecil
+	String a = "Java";
+	String b = "java";
+	System.out.println(a.equalsIgnoreCase(b));
+	// outputnya adalah true
+
+	-contains(CharSequence seq)
+	Mengecek apakah string mengandung substring tertentu
+	String s = "I love Java";
+	System.out.println(s.contains("love"));
+	// outputnya adalah true
+
+	-replace(char old, char new)
+	Mengganti semua karakter tertentu dengan karakter baru
+	String s = "banana";
+	System.out.println(s.replace('a', 'o'));
+	// outputnya adalah bonono
+	
+	-indexOf(String str)
+	Mengembalikan posisi pertama substring yang ditemukan (jika tidak ada → -1)
+	String s = "Java Programming";
+	System.out.println(s.indexOf("Pro"));
+	// outputnya adalah 5
+	
+	-split(String regex)
+	Memecah string berdasarkan delimiter tertentu dan menghasilkan array
+	String s = "apple,banana,orange";
+	String[] arr = s.split(",");
+	System.out.println(arr[1]);
+	// outputnya adalah banana
+
+	
+3. 	-Keamanan
+	Karena String immutable, datanya tidak bisa diubah setelah dibuat.
+	Hal ini sangat penting, misalnya ketika String digunakan untuk:
+		-password
+		-username
+		-URL
+		-koneksi database
+		-file path
+	Jika String bisa diubah, maka hacker bisa memodifikasi nilai tanpa sepengetahuan kita.
+	
+	-Thread Safety
+	Karena immutable, objek String aman digunakan di multi-threading tanpa perlu synchronization tambahan.
+	Beberapa thread bisa berbagi String yang sama tanpa khawatir ada perubahan data.
